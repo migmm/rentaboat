@@ -1,0 +1,91 @@
+@use '../abstracts/variables' as color;
+
+.main-content {
+
+        & .hero {
+            background-image: url("../img/boat-on-water.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right top;
+            width: 100%;
+            padding: 3em;
+
+            & h1 {
+                //  position: absolute;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 1em;
+                color: color.$white;
+                text-shadow: 5px 3px 7px rgba(0, 0, 0, 0.5)
+            }
+
+            & .boat-scheduler {
+                //  position: absolute;
+                font-size: 16px;
+                top: 100px;
+                margin: 0 auto;
+                max-width: 500px;
+                min-width: 200px;
+                background-color: color.$white;
+                border-radius: 8px;
+                padding: 2em;
+                margin-top: 2em;
+                margin-bottom: 3em;
+                text-align: center;
+
+                & .input-text-container {
+
+                    & input {
+                        display: block;
+                        width: 100%;
+                        padding: .6em;
+                        margin: .5em 0;
+                    }
+                }
+
+                & .input-date-container {
+                    
+                    & label {
+                        display: inline-block;
+                        width: 49%;
+                        margin-top: 1.5em;
+                    }
+
+                    & input {
+                        display: inline-block;
+                        width: 49.3%;
+                        padding: .6em 0;
+                        margin: .5em 0;
+                    }
+                }
+
+                & .input-select-container {
+
+                    & label {
+                        display: block;
+                        margin-top: 1.5em;
+                    }
+
+                    & select {
+                        display: block;
+                        width: 100%;
+                        padding: .6em;
+                        margin: .5em 0;
+                    }
+                }
+
+                & form {
+                    & input {
+                        margin-top: 1.5em;
+                    }
+                }
+            }
+        }
+    }
+
+
+.label-error {
+    color: color.$lightred;
+    font-size: .8em;
+    display: none;
+}

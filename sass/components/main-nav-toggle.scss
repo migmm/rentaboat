@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as color;
+
+.main-nav-toggle {
+    display: none;
+}
+
+.main-nav-toggle:checked~.main-header .main-header__wrapper__main-nav-container,
+.main-nav-toggle:checked~.main-header .main-header__wrapper__user-menu-container ,
+.main-nav-toggle:checked~.main-header .main-header__wrapper__language-selector  {
+    display: block;
+    z-index: 1000;
+}

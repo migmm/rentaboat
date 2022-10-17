@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Rent a boat</title>
+</head>
+
+<body>
+    <input type="checkbox" class="main-nav-toggle" id="main-nav-toggle">
+    <header class="main-header">
+        <div class="main-header__wrapper">
+            <div class="main-header__wrapper__logo-container">
+                <a href="/"><img class="main-header__wrapper__logo-container__logo" src="img/cb-logo.png"
+                        alt="Logo"></a>
+            </div>
+
+            <div class="main-header__wrapper__language_select">
+            </div>
+            <div class="main-header__wrapper__user-menu-container">
+                <Span>Ingresar</Span>
+                <div class="user-menu">
+                    <a href="#" class="user-menu__link">Iniciar sesión</a>
+                    <a href="#" class="user-menu__link">Crear cuenta</a>
+                </div>
+            </div>
+
+            <div class="main-header__wrapper__main-nav-container">
+                <nav class="main-nav">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item">
+                            <a href="/home" class="main-nav__link">Inicio</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="/alta" class="main-nav__link">Alta</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="/contacto" class="main-nav__link">Contacto</a>
+                        </li>
+                        <li class="main-nav__item">
+                            <a href="/nosotros" class="main-nav__link">Nosotros</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="main-header__wrapper__language-selector">
+                <form action="">
+                    <select name="language" id="language">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="main-header__wrapper__hamburger-button-container">
+                <label for="main-nav-toggle" class="hamburger-button" title="Expandir barra de navegación">
+                    <span class="hamburger-button__top-bread"></span>
+                    <span class="hamburger-button__meat"></span>
+                    <span class="hamburger-button__bottom-bread"></span>
+                </label>
+            </div>
+
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="hero">
+            <h1>Tenemos la flota más completa.</h1>
+            <div class="boat-scheduler">
+                <form action="#">
+
+                    <h2>Contamos con más de 5000 embarcaciónes en todo el mundo.</h2>
+                    <div class="input-text-container">
+                        <label for="place-of-departure" class="input-label">Lugar de salida</label>
+                        <input type="text" id="place-of-departure" class="input-input"
+                            placeholder="Croacia, Ibiza, Amalfi..." required autofocus>
+                        <span class="label-error">ERROR! Ingrese un lugar.</span>
+                    </div>
+
+                    <div class="input-date-container">
+                        <label for="date-from">Fecha de inicio:</label>
+                        <label for="date-to">Fecha de finalizado:</label>
+                        <input type="date" id="date-from" name="date-from" required>
+                        <input type="date" id="date-to" name="date-to" required>
+                        <span class="label-error">ERROR! Seleccione una fecha válida.</span>
+                    </div>
+
+                    <div class="input-select-container">
+                        <label for="boat-type" class="input-label">Tipo de embarcación</label>
+                        <select name="boat-type" id="boat-type">
+                            <option hidden disabled selected>Catamarán, lancha, yate...</option>
+                            <option value="1">Catamarán</option>
+                            <option value="2">JetSky</option>
+                            <option value="3">Lancha</option>
+                            <option value="4">Semirrígido</option>
+                            <option value="5">Velero</option>
+                            <option value="6">Yate</option>
+                        </select>
+                        <span class="label-error">ERROR! Ingrese el tipo de embarcación que busca.</span>
+                    </div>
+                    <input type="submit">
+
+                </form>
+            </div>
+        </div>
+
+        <div class="main-content__wrapper">
+
+
+            <section class="selected-places">
+                <h2>Nuestros clientes eligen</h2>
+                <div class="destination-choose"><img src="img/bahamas.jpg" alt="Bahamas"></div>
+                <div class="destination-choose"><img src="img/croatia.jpg" alt="Croacia"></div>
+                <div class="destination-choose"><img src="img/barcelona.jpg" alt="Barcelona"></div>
+            </section>
+        </div>
+        <div class="main-content__interlude">
+            <p>El lugar que buscas para navegar te está esperando.</p>
+        </div>
+        <div class="main-content__wrapper">
+            <section class="selected-boats">
+                <h2>Algunas de nuestras embarcacones.</h2>
+                <div class="best-boat"><img src="img/sailboat.jpg" alt="Velero"></div>
+                <div class="best-boat"><img src="img/yatch.jpg" alt="Yate"></div>
+                <div class="best-boat"><img src="/img/luxury-yatch.jpg" alt="Yate lujoso"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="main-footer__footer-content"></div>
+        <div class="main-footer__copyright">
+            Copyright 2022 - Forged by <a href="https://www.miguedev.com">www.miguedev.com</a>
+        </div>
+    </footer>
+    <script src="https://use.fontawesome.com/b826175004.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

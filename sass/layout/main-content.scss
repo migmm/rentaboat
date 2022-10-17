@@ -1,0 +1,89 @@
+@use '../abstracts/variables' as color;
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__wrapper {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1600px;
+
+        & .selected-places {
+            
+            width: 100%;
+          //  border: 2px solid black;
+            text-align: center;
+
+            & h2 {
+                margin-top: 2em;
+                margin-bottom: 1em;
+            }
+    
+            & .destination-choose {
+                display: inline-block;
+                width: 30%;
+                height: 460px;
+            //    border: 2px solid black;
+
+                & img {
+                    width: 450px;
+                    height: 450px;
+                    object-fit: cover;
+                }
+            }
+        } 
+
+        & .selected-boats {
+            width: 100%;
+           // border: 2px solid black;
+            text-align: center;
+
+            & h2 {
+                margin-top: 2em;
+                margin-bottom: 1em;
+            }
+    
+            & .best-boat {
+                display: inline-block;
+                width: 30%;
+                height: 460px;
+              //  border: 2px solid black;
+
+                & img {
+                    width: 450px;
+                    height: 450px;
+                    object-fit: cover;
+                }
+            }
+        } 
+    }
+
+    &__interlude {
+        width: 100%;
+        height: 300px;
+        background-image: url("../img/mid.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: black;
+        margin: 3em 0;
+
+        & p {
+            text-align: center;
+            line-height: 225px;
+            color: color.$white;
+            font-size: 32px;
+            font-weight: 700;
+            text-shadow: 5px 3px 7px rgba(0, 0, 0, 0.5)
+        } 
+    }
+    
+}
