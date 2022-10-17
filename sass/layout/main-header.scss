@@ -5,7 +5,18 @@
     height: 100px;
     background-color: color.$navyblue;
     color: color.$white;
-   // z-index: 900; */
+
+    @media (min-width: 1010px) {
+        position: absolute;
+        margin-top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 97%;
+        border-radius: 10px;
+        overflow: hidden;
+
+    }
+
     &__wrapper {
         max-width: 1600px;
         display: flex;
@@ -15,6 +26,10 @@
         width: 100%;
         height: 100%;
         margin: 0 auto;
+
+        @media (min-width: 1010px) {
+            flex-wrap: nowrap;
+        }
 
         &__logo-container {
             padding-left: 1em;
@@ -30,6 +45,10 @@
             width: 100%;
             background-color: color.$navyblue;
             text-align: center;
+
+            @media (min-width: 1010px) {
+                display: block;
+            }
 
             & span {
                 display: none;
@@ -47,10 +66,27 @@
 
                 &__link:nth-child(1) {
                     border-top: 2px solid color.$darkgrey;
+                    white-space: nowrap;
+
+
+                    @media (min-width: 1010px) {
+                        border-top: none;
+                    }
                 }
 
                 &__link:nth-child(2) {
                     border-bottom: 2px solid color.$darkgrey;
+                    white-space: nowrap;
+
+                    @media (min-width: 1010px) {
+                        border-bottom: none;
+                    }
+                }
+
+                @media (min-width: 1010px) {
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+
                 }
             }
         }
@@ -61,6 +97,11 @@
             width: 100%;
             background-color: color.$navyblue;
             text-align: center;
+
+            @media (min-width: 1010px) {
+                display: block;
+                width: 50%;
+            }
         }
 
         &__language-selector {
@@ -70,10 +111,18 @@
             background-color: color.$navyblue;
             padding: 1em 1em;
             text-align: center;
+
+            @media (min-width: 1010px) {
+                display: block;
+            }
         }
 
         &__hamburger-button-container {
             padding: 2.35em 1em;
+
+            @media (min-width: 1010px) {
+                display: none;
+            }
         }
     }
 }

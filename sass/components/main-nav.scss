@@ -16,11 +16,13 @@
         flex-direction: column;
         justify-content: flex-start;
         width: 100%; */
+        @media (min-width: 1010px) {
+            flex-direction: row;
+        }
     }
 
     &__item {
         padding: 1em 1em;
-        
     }
 
     &__link {
