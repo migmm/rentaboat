@@ -20,7 +20,8 @@ Para el frontend se utilizó:
 
 
 TODO
-Para el Backend se utilizará
+
+Para el Backend se utilizará:
 
 
 - Node.JS
