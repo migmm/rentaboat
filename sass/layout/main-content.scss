@@ -66,6 +66,7 @@ body {
 
                     @media (min-width: 766px) {
                         font-size: 1.5em;
+                        bottom: 4.5em;
                     }
                 }
             }
@@ -121,6 +122,7 @@ body {
 
                     @media (min-width: 766px) {
                         font-size: 1.5em;
+                        bottom: 4.5em;
                     }
                 }
             }
@@ -148,7 +150,7 @@ body {
             margin: 0 1em;
             text-shadow: 5px 3px 7px rgba(0, 0, 0, 0.5);
 
-            @media (min-width: 800px) {
+            @media (min-width: 850px) {
                 font-size: 32px;
                 line-height: 300px;
             }
