@@ -428,12 +428,13 @@ body {
 }
 .main-header__wrapper__logo-container {
   padding-left: 1em;
+  flex-grow: 1;
 }
 .main-header__wrapper__logo-container__logo {
   width: 250px;
 }
 .main-header__wrapper__user-menu-container {
-  display: none;
+  display: block;
   order: 2;
   width: 100%;
   background-color: #003851;
@@ -442,14 +443,20 @@ body {
 @media (min-width: 1010px) {
   .main-header__wrapper__user-menu-container {
     display: block;
+    width: auto;
   }
 }
 .main-header__wrapper__user-menu-container span {
-  display: none;
+  display: block;
 }
 .main-header__wrapper__user-menu-container .user-menu {
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 1010px) {
+  .main-header__wrapper__user-menu-container .user-menu {
+    display: none;
+  }
 }
 .main-header__wrapper__user-menu-container .user-menu__link {
   padding: 1em 1em;
@@ -486,11 +493,12 @@ body {
   width: 100%;
   background-color: #003851;
   text-align: center;
+  flex-grow: 1;
 }
 @media (min-width: 1010px) {
   .main-header__wrapper__main-nav-container {
     display: block;
-    width: 50%;
+    width: 30%;
   }
 }
 .main-header__wrapper__language-selector {
@@ -504,6 +512,7 @@ body {
 @media (min-width: 1010px) {
   .main-header__wrapper__language-selector {
     display: block;
+    width: auto;
   }
 }
 .main-header__wrapper__hamburger-button-container {
@@ -555,7 +564,6 @@ body {
     width: 30%;
     height: 400px;
     margin: 0.5em;
-    border-radius: 10px;
   }
 }
 .main-content__wrapper .selected-places .destination-choose img {
@@ -565,6 +573,11 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+@media (min-width: 766px) {
+  .main-content__wrapper .selected-places .destination-choose img {
+    border-radius: 10px;
+  }
 }
 .main-content__wrapper .selected-places .destination-choose span {
   position: absolute;
@@ -606,7 +619,6 @@ body {
     width: 30%;
     height: 400px;
     margin: 0.5em;
-    border-radius: 10px;
   }
 }
 .main-content__wrapper .selected-boats .best-boat img {
@@ -616,6 +628,11 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+@media (min-width: 766px) {
+  .main-content__wrapper .selected-boats .best-boat img {
+    border-radius: 10px;
+  }
 }
 .main-content__wrapper .selected-boats .best-boat span {
   position: absolute;

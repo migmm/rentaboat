@@ -33,6 +33,7 @@
 
         &__logo-container {
             padding-left: 1em;
+            flex-grow: 1;
 
             &__logo {
                 width: 250px;
@@ -40,7 +41,7 @@
         }
 
         &__user-menu-container {
-            display: none;
+            display: block;
             order: 2;
             width: 100%;
             background-color: color.$navyblue;
@@ -48,15 +49,20 @@
 
             @media (min-width: 1010px) {
                 display: block;
+                width: auto;
             }
 
             & span {
-                display: none;
+                display: block;
             }
 
             & .user-menu {
                 display: flex;
                 flex-direction: column;
+
+                @media (min-width: 1010px) {
+                    display: none;
+                }
 
                 &__link {
                     padding: 1em 1em;
@@ -97,10 +103,11 @@
             width: 100%;
             background-color: color.$navyblue;
             text-align: center;
+            flex-grow: 1;
 
             @media (min-width: 1010px) {
                 display: block;
-                width: 50%;
+                width: 30%;
             }
         }
 
@@ -114,6 +121,7 @@
 
             @media (min-width: 1010px) {
                 display: block;
+                width: auto;
             }
         }
 
