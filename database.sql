@@ -27,7 +27,8 @@ CREATE TABLE customer(
 );
 
 CREATE TABLE rental(
-    rental_id VARCHAR(40),
+    rental_id SERIAL PRIMARY KEY,
+    boat_id VARCHAR(40),
     available_date_from VARCHAR(40),
     available_date_to VARCHAR(40),
     location VARCHAR(40),
