@@ -10,7 +10,8 @@ CREATE TABLE boats(
     harbour_id  VARCHAR(40),
     captain VARCHAR(40),
     capacity VARCHAR(40),
-    length VARCHAR(40)
+    length VARCHAR(40),
+    price VARCHAR(40)
 );
 
 CREATE TABLE boat_owner(
@@ -37,7 +38,8 @@ CREATE TABLE cart(
     customer_id VARCHAR(40),
     boat_id VARCHAR(40),
     date_from VARCHAR(40),
-    date_to VARCHAR(40)
+    date_to VARCHAR(40),
+    total_price VARCHAR(40)
 );
 
 CREATE TABLE countries(
