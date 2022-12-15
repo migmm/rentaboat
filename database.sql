@@ -8,7 +8,6 @@ CREATE TABLE boats(
     year VARCHAR(40),
     city_id VARCHAR(40), 
     harbour_id  VARCHAR(40),
-    captain VARCHAR(40),
     capacity VARCHAR(40),
     length VARCHAR(40),
     price VARCHAR(40)
