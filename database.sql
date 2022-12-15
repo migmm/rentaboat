@@ -10,9 +10,7 @@ CREATE TABLE boats(
     harbour_id  VARCHAR(40),
     captain VARCHAR(40),
     capacity VARCHAR(40),
-    length VARCHAR(40),
-    contact_phone VARCHAR(40),
-    contact_name VARCHAR(40)
+    length VARCHAR(40)
 );
 
 CREATE TABLE boat_owner(
