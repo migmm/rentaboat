@@ -1,3 +1,5 @@
+-- SQL COMMAND FOR DATABASE CREATION 
+
 CREATE DATABASE BOATSFORRENT;
 
 CREATE TABLE countries(
@@ -19,11 +21,12 @@ CREATE TABLE harbour(
 
 CREATE TABLE images(
     image_id SERIAL PRIMARY KEY,
+    product_id INTEGER,
     image_url STRING
 );
 
 CREATE TABLE avatar(
-    image_id SERIAL PRIMARY KEY,
+    avatar_id SERIAL PRIMARY KEY,
     avatar_url STRING
 );
 
@@ -46,6 +49,7 @@ CREATE TABLE boats(
     harbour_id INTEGER,
     capacity STRING,
     description STRING,
+    images float,
     length FLOAT,
     price FLOAT
 );
@@ -75,12 +79,16 @@ CREATE TABLE cart(
     total_price FLOAT
 );
 
+-- SQL COMMAND TO ADD PRODUCTS TO DATABASE
 
 INSERT INTO boats (boat_type, brand, model, year, city_id, harbour_id, capacity, description, length, price) VALUES
 ('Yacht', 'Bavaria', 'Cruiser 40', '2012', 'Göcek', 'Ece Saray Marina & Resor', 6, '', 12.35, 290)
 ('Yacht', 'Dufour', '47 Harmony', '2006', 'Barcelona', 'Port Olímpic', 10, '', 13.95, 300);
 
 
+/*
+
+In case od use sequelize-cli these are the commands to create tables
 
 npx sequelize-cli model:generate --name countries --attributes country_name:string
 npx sequelize-cli model:generate --name cities --attributes city_name:string,country_id:integer
@@ -93,5 +101,8 @@ npx sequelize-cli model:generate --name customer --attributes customer_name:stri
 npx sequelize-cli model:generate --name rental --attributes boat_id:integer,available_date_from:date,available_date_to:date,location:integer,available_captain:boolean
 npx sequelize-cli model:generate --name cart --attributes customer_id:integer,boat_id:integer,total_price:float
 
+Command to migrate database after tables created
 
-npx sequelize-cli db:migrate
+npx sequelize-cli db:migrate 
+
+*/

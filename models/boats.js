@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'boat_id'
       })
 
+      boats.hasMany(models.images, {
+        foreignKey: 'boat_id'
+      })
+
       boats.belongsTo(models.cities, {
         foreignKey: 'id',
         target_key: 'city_id'
