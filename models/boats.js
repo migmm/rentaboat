@@ -11,13 +11,30 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      boats.hasMany(models.rental, {
+        foreignKey: 'boat_id'
+      })
+
+      boats.hasMany(models.cart, {
+        foreignKey: 'boat_id'
+      })
+
+      boats.belongsTo(models.cities, {
+        foreignKey: 'id',
+        target_key: 'city_id'
+      })
+
+      boats.belongsTo(models.harbour, {
+        foreignKey: 'id',
+        target_key: 'harbour_id'
+      })
     }
   }
   boats.init({
     boat_type: DataTypes.STRING,
     brand: DataTypes.STRING,
     model: DataTypes.STRING,
-    year: DataTypes.INTEGER,
+    year: DataTypes.DATE,
     city_id: DataTypes.INTEGER,
     harbour_id: DataTypes.INTEGER,
     capacity: DataTypes.INTEGER,
