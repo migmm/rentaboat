@@ -21,7 +21,7 @@ module.exports = {
       owner_avatar: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'avatar',
+          model: 'avatars',
           key: 'id'
         },
         onDelete: 'CASCADE',

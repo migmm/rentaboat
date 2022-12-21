@@ -92,3 +92,6 @@ npx sequelize-cli model:generate --name boats --attributes boat_type:string,bran
 npx sequelize-cli model:generate --name customer --attributes customer_name:string,customer_mail:string,customer_phone:string,customer_avatar:integer
 npx sequelize-cli model:generate --name rental --attributes boat_id:integer,available_date_from:date,available_date_to:date,location:integer,available_captain:boolean
 npx sequelize-cli model:generate --name cart --attributes customer_id:integer,boat_id:integer,total_price:float
+
+
+npx sequelize-cli db:migrate
