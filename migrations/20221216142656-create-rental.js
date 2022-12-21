@@ -10,7 +10,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       boat_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'boats',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       available_date_from: {
         type: Sequelize.DATE
@@ -18,8 +24,23 @@ module.exports = {
       available_date_to: {
         type: Sequelize.DATE
       },
+      customer_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'customer',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
+      },
       location: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'cities',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       available_captain: {
         type: Sequelize.BOOLEAN

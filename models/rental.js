@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   rental.init({
     boat_id: DataTypes.INTEGER,
+    customer_id: DataTypes.INTEGER,
     available_date_from: DataTypes.DATE,
     available_date_to: DataTypes.DATE,
     location: DataTypes.INTEGER,

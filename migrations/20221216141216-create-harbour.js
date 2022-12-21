@@ -10,7 +10,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       harbour_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        references: {
+          model: 'cities',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       city_id: {
         type: Sequelize.INTEGER

@@ -63,6 +63,7 @@ CREATE TABLE rental(
     available_date_from DATE,
     available_date_to DATE,
     location INTEGER,
+    customer_id STRING,
     available_captain BOOLEAN
 );
 

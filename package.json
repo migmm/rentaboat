@@ -1,5 +1,5 @@
 {
-  "type": "module",
+  "type": "commonjs",
   "name": "rentaboat",
   "version": "1.0.0",
   "description": "First commit 16/10/2022",

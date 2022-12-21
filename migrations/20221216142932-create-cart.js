@@ -13,7 +13,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       boat_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'boats',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       total_price: {
         type: Sequelize.FLOAT
