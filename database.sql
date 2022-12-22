@@ -2,7 +2,7 @@
 
 CREATE DATABASE BOATSFORRENT;
 
-CREATE TABLE countries(
+/* CREATE TABLE countries(
     coutry_id SERIAL PRIMARY KEY,
     country_name STRING
 );
@@ -11,7 +11,7 @@ CREATE TABLE cities(
     city_id SERIAL PRIMARY KEY,
     country_id INTEGER,
     city_name STRING
-);
+); */
 
 CREATE TABLE harbour(
     harbour_id SERIAL PRIMARY KEY,
@@ -19,24 +19,25 @@ CREATE TABLE harbour(
     city_id INTEGER
 );
 
-CREATE TABLE images(
+/* CREATE TABLE images(
     image_id SERIAL PRIMARY KEY,
     product_id INTEGER,
     image_url STRING
-);
+); */
 
 CREATE TABLE avatar(
     avatar_id SERIAL PRIMARY KEY,
     avatar_url STRING
+    owner_avatar INTEGER,
+    customer_avatar INTEGER
 );
-
 
 CREATE TABLE boat_owner(
     owner_id SERIAL PRIMARY KEY,
     owner_name STRING,
     owner_mail STRING,
     owner_phone STRING
-    owner_avatar INTEGER,
+    
 );
 
 CREATE TABLE boats(
@@ -58,7 +59,7 @@ CREATE TABLE customer(
     customer_id SERIAL PRIMARY KEY,
     customer_phone STRING,
     customer_name STRING,
-    customer_avatar INTEGER
+    
 );
 
 CREATE TABLE rental(

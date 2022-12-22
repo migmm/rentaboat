@@ -1,32 +1,55 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class harbour extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-      harbour.hasMany(models.boats, {
-        foreignKey: 'harbour_id'
-      })
+import { DataTypes } from "sequelize";
+import { sequelize } from "../model/sequelize.js";
+import { City } from "./city.js";
 
-      harbour.belongsTo(models.cities, {
-        foreignKey: 'id',
-        target_key: 'city_id'
-      })
-    }
-  }
-  harbour.init({
-    harbour_name: DataTypes.STRING,
-    city_id: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'harbour',
-  });
-  return harbour;
-};
+export const Harbour = sequelize.define(
+    "harbours",
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        harbour_name: {
+            type: DataTypes.STRING,
+        },
+/*         city_id: {
+            type: DataTypes.INTEGER,
+        }, */
+    },
+    {
+        timestamps: false,
+    },
+);
+
+Harbour.belongsTo(City, {
+    foreignKey: 'id',
+    targetId: 'city_id'
+}); 
+
+/* Harbour.belongsTo(City, {
+    foreignKey: 'id',
+    target_key: 'city_id'
+}) 
+
+City.hasMany(Harbour, {
+    foreignKey: 'city_id'
+}); */
+
+
+/* Harbour.hasMany(Boat, {
+    foreignKey: 'harbour_id'
+});
+
+}); */
+/* 
+
+Harbour.hasMany(Boat, {
+    foreignKey: 'harbour_id',
+    sourceKey: 'id'
+});
+
+Boat.belongsTo(Harbour, {
+    foreignKey: 'id',
+    targetId: 'harbour_id'
+}); */

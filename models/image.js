@@ -1,24 +1,19 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
+/* import { Boat } from "./Boat.js"; */
 
-export const Customer = sequelize.define(
-    "customers",
+export const Image = sequelize.define(
+    "images",
     {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        customer_name: {
+        image_url: {
             type: DataTypes.STRING,
         },
-        customer_mail: {
-            type: DataTypes.STRING,
-        },
-        customer_phone: {
-            type: DataTypes.STRING,
-        },
-    /*     customer_avatar: {
+    /*     boat_id: {
             type: DataTypes.INTEGER,
         }, */
     },
@@ -27,11 +22,17 @@ export const Customer = sequelize.define(
     },
 );
 
-/* Customer.hasMany(Rental, {
-    foreignKey: 'customer_id'
+/* Image.hasMany(Boat, {
+    foreignKey: 'boat_id',
+    sourceKey: 'id'
 });
 
-Customer.belongsTo(Avatar, {
+Boat.belongsTo(Image, {
     foreignKey: 'id',
-    target_key: 'customer_avatar'
+    targetId: 'boat_id'
+})
+
+/* Image.belongsTo(Boats, {
+    foreignKey: 'id',
+    target_key: 'boat_id'
 }); */

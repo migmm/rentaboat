@@ -1,30 +1,41 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class avatar extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-      avatar.hasMany(models.boat_owner, {
-        foreignKey: 'owner_avatar'
-      })
-      
-      avatar.hasMany(models.customer, {
-        foreignKey: 'customer_avatar'
-      })
-    }
-  }
-  avatar.init({
-    avatar_url: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'avatar',
-  });
-  return avatar;
-};
+import { DataTypes } from "sequelize";
+import { sequelize } from "../model/sequelize.js";
+/* import { Boat_owner } from "./boat_owner.js";
+import { Customer } from "./customer.js"; */
+
+export const Avatar = sequelize.define(
+    "avatars",
+    {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        avatar_url: {
+            type: DataTypes.STRING,
+        },
+    },
+    {
+        timestamps: false,
+    },
+);
+
+Avatar.hasMany(Boat_owner, {
+    foreignKey: 'boat_ownerid',
+    sourceKey: 'id'
+});
+
+Boat_owner.belongsTo(Avatar, {
+    foreignKey: 'id',
+    targetId: 'boat_ownerid'
+})
+
+Avatar.hasMany(Customer, {
+    foreignKey: 'customerid',
+    sourceKey: 'id'
+});
+
+Customer.belongsTo(Avatar, {
+    foreignKey: 'id',
+    targetId: 'customerid'
+})
