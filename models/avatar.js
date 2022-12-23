@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-/* import { Boat_owner } from "./boat_owner.js";
-import { Customer } from "./customer.js"; */
+import { Boat_owner } from "./boat_owner.js";
+import { Customer } from "./customer.js";
 
 export const Avatar = sequelize.define(
     "avatars",
@@ -20,22 +20,8 @@ export const Avatar = sequelize.define(
     },
 );
 
-Avatar.hasMany(Boat_owner, {
-    foreignKey: 'boat_ownerid',
-    sourceKey: 'id'
-});
-
-Boat_owner.belongsTo(Avatar, {
-    foreignKey: 'id',
-    targetId: 'boat_ownerid'
-})
-
-Avatar.hasMany(Customer, {
-    foreignKey: 'customerid',
-    sourceKey: 'id'
-});
-
-Customer.belongsTo(Avatar, {
-    foreignKey: 'id',
-    targetId: 'customerid'
-})
+/* Boat_owner.hasMany(Avatar)
+Avatar.belongsTo(Boat_owner)
+Customer.hasMany(Avatar)
+Avatar.belongsTo(Customer)
+ */

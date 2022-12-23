@@ -18,20 +18,8 @@ export const Customer = sequelize.define(
         customer_phone: {
             type: DataTypes.STRING,
         },
-    /*     customer_avatar: {
-            type: DataTypes.INTEGER,
-        }, */
     },
     {
         timestamps: false,
     },
 );
-
-/* Customer.hasMany(Rental, {
-    foreignKey: 'customer_id'
-});
-
-Customer.belongsTo(Avatar, {
-    foreignKey: 'id',
-    target_key: 'customer_avatar'
-}); */

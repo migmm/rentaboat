@@ -50,7 +50,7 @@ CREATE TABLE boats(
     harbour_id INTEGER,
     capacity STRING,
     description STRING,
-    images float,
+    images_id INTEGER,
     length FLOAT,
     price FLOAT
 );
@@ -59,7 +59,6 @@ CREATE TABLE customer(
     customer_id SERIAL PRIMARY KEY,
     customer_phone STRING,
     customer_name STRING,
-    
 );
 
 CREATE TABLE rental(

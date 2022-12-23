@@ -14,32 +14,12 @@ export const City = sequelize.define(
         city_name: {
             type: DataTypes.STRING,
         },
-/*         country_id: {
-            type: DataTypes.INTEGER,
-        }, */ 
     },
     {
         timestamps: false,
     },
 );
 
-City.hasMany(Harbour, {
-    foreignKey: 'city_id',
-    sourceKey: 'id'
-});
-
-/* Harbour.belongsTo(City, {
-    foreignKey: 'id',
-    targetId: 'city_id'
-}); */
-/* 
-City.hasMany(Boat, {
-    foreignKey: 'city_id',
-    sourceKey: 'id'
-});
-
-Boat.belongsTo(City, {
-    foreignKey: 'id',
-    targetId: 'city_id'
-});
+/* City.hasMany(Harbour);
+City.hasMany(Boat);
  */

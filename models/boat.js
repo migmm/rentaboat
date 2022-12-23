@@ -21,12 +21,6 @@ export const Boat = sequelize.define(
         year: {
             type: DataTypes.DATE,
         },
-     /*    city_id: {
-            type: DataTypes.INTEGER,
-        }, */
-     /*    harbour_id: {
-            type: DataTypes.INTEGER,
-        }, */
         capacity: {
             type: DataTypes.INTEGER,
         },
@@ -44,25 +38,3 @@ export const Boat = sequelize.define(
         timestamps: false,
     },
 );
-
-/* Boats.hasMany(Rental, {
-    foreignKey: 'boat_id'
-}); */
-
-/* Boats.hasMany(Cart, {
-    foreignKey: 'boat_id'
-});
-
-Boats.hasMany(Image, {
-    foreignKey: 'boat_id'
-});
-
--Boats.belongsTo(City, {
-    foreignKey: 'id',
-    target_key: 'city_id'
-});
-
--Boats.belongsTo(Harbour, {
-    foreignKey: 'id',
-    target_key: 'harbour_id'
-}); */

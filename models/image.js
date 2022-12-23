@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-/* import { Boat } from "./Boat.js"; */
+import { Boat } from "./boat.js";
 
 export const Image = sequelize.define(
     "images",
@@ -13,26 +13,13 @@ export const Image = sequelize.define(
         image_url: {
             type: DataTypes.STRING,
         },
-    /*     boat_id: {
-            type: DataTypes.INTEGER,
-        }, */
     },
     {
         timestamps: false,
     },
 );
+/* 
+Boat.hasMany(Image);
+Image.belongsTo(Boat);
 
-/* Image.hasMany(Boat, {
-    foreignKey: 'boat_id',
-    sourceKey: 'id'
-});
-
-Boat.belongsTo(Image, {
-    foreignKey: 'id',
-    targetId: 'boat_id'
-})
-
-/* Image.belongsTo(Boats, {
-    foreignKey: 'id',
-    target_key: 'boat_id'
-}); */
+ */

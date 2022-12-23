@@ -1,7 +1,9 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-/* import { Customer } from "./customer.js";
-import { Boat } from "./Boat.js"; */
+import { Customer } from "./customer.js";
+import { Boat_owner } from "./boat_owner.js"; 
+import { Boat } from "./Boat.js";
+import { City } from "./city.js";
 
 
 export const Cart = sequelize.define(
@@ -12,12 +14,6 @@ export const Cart = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-      /*   customer_id: {
-            type: DataTypes.INTEGER
-        },
-        boat_id: {
-            type: DataTypes.INTEGER
-        }, */
         date_from: {
             type: DataTypes.DATE,
         },
@@ -32,28 +28,13 @@ export const Cart = sequelize.define(
         timestamps: false,
     },
 );
-/* 
-Cart.belongsTo(Boat, {
-    foreignKey: 'id',
-    target_key: 'boat_id'
-}); */
-/* 
-Cart.hasMany(Customer, {
-    foreignKey: 'customer_id',
-    sourceKey: 'id'
-});
 
-Customer.belongsTo(Cart, {
-    foreignKey: 'id',
-    targetId: 'customer_id'
-})
-
-Cart.hasMany(Boat, {
-    foreignKey: 'boat_id',
-    sourceKey: 'id'
-});
-
-Boat.belongsTo(Cart, {
-    foreignKey: 'id',
-    targetId: 'boat_id'
-}) */
+/* Cart.hasMany(Boat_owner)
+Boat_owner.belongsTo(Cart)
+Cart.hasMany(Customer)
+Customer.belongsTo(Cart)
+Cart.hasMany(City)
+City.belongsTo(Cart)
+Cart.hasMany(Boat)
+Boat.belongsTo(Cart)
+ */
