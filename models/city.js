@@ -2,6 +2,8 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
 import { Harbour } from "./harbour.js";
 import { Boat } from "./Boat.js";
+import { Cart } from "./cart.js";
+import { Rental } from "./rental.js";
 
 export const City = sequelize.define(
     "city",
@@ -22,3 +24,9 @@ export const City = sequelize.define(
 
 City.hasMany(Harbour);
 City.hasMany(Boat);
+
+Cart.hasMany(City)
+City.belongsTo(Cart)
+
+Rental.hasMany(City)
+City.belongsTo(Rental)

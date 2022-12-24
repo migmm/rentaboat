@@ -1,6 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
 import { Boat_owner } from "./Boat_owner.js";
+import { Cart } from "./cart.js";
+import { Rental } from "./rental.js";
 
 export const Boat = sequelize.define(
     "boat",
@@ -42,3 +44,9 @@ export const Boat = sequelize.define(
 
 Boat_owner.hasMany(Boat)
 Boat.belongsTo(Boat_owner)
+
+Cart.hasMany(Boat)
+Boat.belongsTo(Cart)
+
+Rental.hasMany(Boat)
+Boat.belongsTo(Rental)

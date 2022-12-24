@@ -2,9 +2,6 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
 import { Customer } from "./customer.js";
 import { Boat_owner } from "./boat_owner.js"; 
-import { Boat } from "./Boat.js";
-import { City } from "./city.js";
-
 
 export const Cart = sequelize.define(
     "cart",
@@ -33,7 +30,4 @@ Cart.hasMany(Boat_owner)
 Boat_owner.belongsTo(Cart)
 Cart.hasMany(Customer)
 Customer.belongsTo(Cart)
-Cart.hasMany(City)
-City.belongsTo(Cart)
-Cart.hasMany(Boat)
-Boat.belongsTo(Cart)
+
