@@ -28,15 +28,14 @@ export const Rental = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        freezeTableName: true,	
     },
 );
 
-/* Boat_owner.belongsTo(Rental)
+Boat_owner.belongsTo(Rental)
 Rental.hasMany(Customer)
 Customer.belongsTo(Rental)
 Rental.hasMany(Boat)
 Boat.belongsTo(Rental)
 Rental.hasMany(City)
 City.belongsTo(Rental)
- */

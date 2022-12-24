@@ -1,9 +1,9 @@
-import { DataTypes } from "sequelize";
+import { Model, Sequelize, DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
 import { City } from "./city.js";
 
 export const Country = sequelize.define(
-    "countries",
+    "country",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -15,9 +15,10 @@ export const Country = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        freezeTableName: true,	
     },
 );
 
-/* Country.hasMany(City); 
- */
+Country.hasMany(City); 
+
+

@@ -16,12 +16,11 @@ export const Avatar = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        freezeTableName: true,	
     },
 );
 
-/* Boat_owner.hasMany(Avatar)
+Boat_owner.hasMany(Avatar)
 Avatar.belongsTo(Boat_owner)
 Customer.hasMany(Avatar)
 Avatar.belongsTo(Customer)
- */

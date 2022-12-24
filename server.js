@@ -22,28 +22,6 @@ import './models/customer.js';
 import './models/rental.js';
 import './models/cart.js';
 
-async function fillTables() {
-
-
-    sequelize.sync().then(() => {
-        console.log('Book table created successfully!');
-     
-        Country.create({
-            country_name: "Spain",
-        }).then(res => {
-            console.log(res)
-        }).catch((error) => {
-            console.error('Failed to create a new record : ', error);
-        });
-     
-     }).catch((error) => {
-        console.error('Unable to create table : ', error);
-     });
-
-     
-     
-  
-}
 
 
 
@@ -57,10 +35,34 @@ async function main() {
     }
 }
 
+async function fillTables() {
 
-main()
+    sequelize.sync().then(() => {
+        console.log('Book table created successfully!');
 
-fillTables ()
+        Country.create({
+            country_name: "Spain",
+            country_name: "France",
+        }).then(res => {
+            console.log(res)
+        }).catch((error) => {
+            console.error('Failed to create a new record : ', error);
+        });
+
+    }).catch((error) => {
+        console.error('Unable to create table : ', error);
+    });
+
+
+
+
+}
+
+
+
+//main()
+
+fillTables()
 
 const PORT = config.PORT;
 const server = app.listen(PORT, () => console.log(`Servidor Express escuchando en el puerto ${PORT}.`));

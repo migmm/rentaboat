@@ -21,6 +21,6 @@ export const Boat_owner = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        freezeTableName: true,	
     },
 );

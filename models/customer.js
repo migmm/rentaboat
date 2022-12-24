@@ -20,6 +20,6 @@ export const Customer = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        freezeTableName: true,	
     },
 );

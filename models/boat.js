@@ -35,6 +35,6 @@ export const Boat = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        freezeTableName: true,	
     },
 );

@@ -15,9 +15,8 @@ export const Harbour = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        freezeTableName: true,	
     },
 );
 
-/* Harbour.hasMany(Boat);
- */
+Harbour.hasMany(Boat);

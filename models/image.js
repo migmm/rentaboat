@@ -15,11 +15,10 @@ export const Image = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        freezeTableName: true,	
     },
 );
-/* 
+
 Boat.hasMany(Image);
 Image.belongsTo(Boat);
 
- */

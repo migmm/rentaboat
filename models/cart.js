@@ -25,11 +25,11 @@ export const Cart = sequelize.define(
         },
     },
     {
-        timestamps: false,
+        reezeTableName: true,	
     },
 );
 
-/* Cart.hasMany(Boat_owner)
+Cart.hasMany(Boat_owner)
 Boat_owner.belongsTo(Cart)
 Cart.hasMany(Customer)
 Customer.belongsTo(Cart)
@@ -37,4 +37,3 @@ Cart.hasMany(City)
 City.belongsTo(Cart)
 Cart.hasMany(Boat)
 Boat.belongsTo(Cart)
- */
