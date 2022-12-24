@@ -1,8 +1,9 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
+import { Boat_owner } from "./Boat_owner.js";
 
 export const Boat = sequelize.define(
-    "boats",
+    "boat",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -38,3 +39,6 @@ export const Boat = sequelize.define(
         freezeTableName: true,	
     },
 );
+
+Boat_owner.hasMany(Boat)
+Boat.belongsTo(Boat_owner)

@@ -4,7 +4,7 @@ import { Harbour } from "./harbour.js";
 import { Boat } from "./Boat.js";
 
 export const City = sequelize.define(
-    "cities",
+    "city",
     {
         id: {
             type: DataTypes.INTEGER,

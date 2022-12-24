@@ -7,7 +7,7 @@ import { City } from "./city.js";
 
 
 export const Cart = sequelize.define(
-    "carts",
+    "cart",
     {
         id: {
             type: DataTypes.INTEGER,

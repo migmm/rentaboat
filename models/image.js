@@ -3,7 +3,7 @@ import { sequelize } from "../model/sequelize.js";
 import { Boat } from "./boat.js";
 
 export const Image = sequelize.define(
-    "images",
+    "image",
     {
         id: {
             type: DataTypes.INTEGER,

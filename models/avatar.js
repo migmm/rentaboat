@@ -4,7 +4,7 @@ import { Boat_owner } from "./boat_owner.js";
 import { Customer } from "./customer.js";
 
 export const Avatar = sequelize.define(
-    "avatars",
+    "avatar",
     {
         id: {
             type: DataTypes.INTEGER,

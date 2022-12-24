@@ -22,9 +22,6 @@ import './models/customer.js';
 import './models/rental.js';
 import './models/cart.js';
 
-
-
-
 async function main() {
     try {
         await sequelize.sync({ force: true });
@@ -40,10 +37,14 @@ async function fillTables() {
     sequelize.sync().then(() => {
         console.log('Book table created successfully!');
 
-        Country.create({
-            country_name: "Spain",
-            country_name: "France",
-        }).then(res => {
+        Country.bulkCreate([
+            
+            { country_name: "Spain" },
+            { country_name: "France" },
+            { country_name: "Croatia" },
+            { country_name: "Italy" },
+
+        ]).then(res => {
             console.log(res)
         }).catch((error) => {
             console.error('Failed to create a new record : ', error);

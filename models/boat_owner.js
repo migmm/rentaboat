@@ -3,7 +3,7 @@ import { sequelize } from "../model/sequelize.js";
 
 
 export const Boat_owner = sequelize.define(
-    "boat_owners",
+    "boat_owner",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -24,3 +24,4 @@ export const Boat_owner = sequelize.define(
         freezeTableName: true,	
     },
 );
+

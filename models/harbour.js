@@ -3,7 +3,7 @@ import { sequelize } from "../model/sequelize.js";
 import { Boat } from "./Boat.js";
 
 export const Harbour = sequelize.define(
-    "harbours",
+    "harbour",
     {
         id: {
             type: DataTypes.INTEGER,
