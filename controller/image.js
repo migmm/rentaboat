@@ -1,18 +1,17 @@
-// const {getProduct, getProducts} = require('../api/products');
-import api from '../api/products.js';
+import api from '../api/image.js';
 
 
 ////////////////////////////////////////////////////////////////////////////////
 //                               GET Controllers                              //
 ////////////////////////////////////////////////////////////////////////////////
 
-const getBoats = async (req, res) => {
-    res.json(await api.getBoats());
+const getImages = async (req, res) => {
+    res.json(await api.getImages());
 };
 
-const getBoat = async (req, res) => {
+const getImage = async (req, res) => {
     const id = req.params.id;
-    res.json(await api.getBoat(id));
+    res.json(await api.getImage(id));
 };
 
 
@@ -21,11 +20,11 @@ const getBoat = async (req, res) => {
 ///////////////////////////////////////////////////////////////////////////////
 
 
-const postBoat = async function (req, res, next) {
+const postImage = async function (req, res, next) {
 
-    const boat = req.body;
-    const newBoat = await api.createBoat(boat);
-    res.json(newBoat);
+    const image = req.body;
+    const newImage = await api.createImage(image);
+    res.json(newImage);
 }
 
 
@@ -33,12 +32,12 @@ const postBoat = async function (req, res, next) {
 //                              PUT Controllers                             //
 //////////////////////////////////////////////////////////////////////////////
 
-const putBoat = async (req, res) => {
+const putImage = async (req, res) => {
     const id = req.params.id;
-    const boat = req.body;
+    const image = req.body;
 
-    const updatedBoat = await api.updateBoat(id, boat) || {};
-    res.json(updatedBoat);
+    const updatedImage = await api.updateImage(id, image) || {};
+    res.json(updatedImage);
 };
 
 
@@ -46,17 +45,17 @@ const putBoat = async (req, res) => {
 //                             DELETE Controllers                            //
 ///////////////////////////////////////////////////////////////////////////////
 
-const deleteBoat = async (req, res) => {
+const deleteImage = async (req, res) => {
     const id = req.params.id;
 
-    const removedBoat = await api.deleteBoat(id) || {};
-    res.json(removedBoat);
+    const removedImage = await api.deleteImage(id) || {};
+    res.json(removedImage);
 };
 
 export default {
-    getBoats,
-    getBoat,
-    postBoat,
-    putBoat,
-    deleteBoat,
+    getImages,
+    getImage,
+    postImage,
+    putImage,
+    deleteImage,
 };
