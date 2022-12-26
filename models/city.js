@@ -18,16 +18,6 @@ export const City = sequelize.define(
         freezeTableName: true,	
     },
 );
-/* 
-City.hasMany(Rental)
-
-City.hasMany(Harbour);
-Harbour.belongsTo(City)
-
-//City.hasMany(Rental)
-//City.belongsTo(Rental)
-
- */
 
 City.hasMany(Harbour);
 Harbour.belongsTo(City)

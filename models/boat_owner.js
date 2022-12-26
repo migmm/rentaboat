@@ -1,7 +1,5 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-/* import { Cart } from "./cart.js"; 
-import { Rental } from "./rental.js"; / */
 import { Boat } from "./boat.js"; 
  
 export const Boat_owner = sequelize.define(
@@ -32,7 +30,6 @@ export const Boat_owner = sequelize.define(
         freezeTableName: true,	
     },
 );
-
 
 Boat.hasMany(Boat_owner)
 Boat_owner.belongsTo(Boat)

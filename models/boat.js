@@ -1,9 +1,5 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-/* import { Boat_owner } from "./Boat_owner.js";
-import { Cart } from "./cart.js";
-import { Rental } from "./rental.js";
-import { City } from "./city.js";*/
 import { Harbour} from "./harbour.js"; 
 
 export const Boat = sequelize.define(
@@ -49,23 +45,6 @@ export const Boat = sequelize.define(
         freezeTableName: true,	
     },
 );
-
-
-/* 
-Boat.hasMany(Cart)
-//Boat.belongsTo(Cart)
-
-Boat.hasMany(Rental)
-//Boat.belongsTo(Rental)
-
-City.hasMany(Boat);
-
-Harbour.hasMany(Boat);
-
-
-Rental.HasMany(Boat)
-Boat.BelongsTo(Rental) */
-
 
 Harbour.hasMany(Boat);
 Boat.belongsTo(Harbour)

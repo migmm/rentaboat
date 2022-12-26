@@ -1,7 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
 
-
 export const Harbour = sequelize.define(
     "harbour",
     {
@@ -24,6 +23,3 @@ export const Harbour = sequelize.define(
         freezeTableName: true,	
     },
 );
-
-
-
