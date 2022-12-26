@@ -1,15 +1,25 @@
-import client from '../model/postgresql.js'
 
-//const modelBoats = BoatModel.get(config.PERSISTENCE_TYPE);
-client.connect();
+import { City } from '../models/city.js';
+import { Country } from '../models/country.js';
+
+//const modelCities = CityModel.get(config.PERSISTENCE_TYPE);
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //                                API Get ALL                                //
 ///////////////////////////////////////////////////////////////////////////////
 
-const getBoats = async () => {
-    const boats = await client.query('SELECT * from boats ORDER BY id ASC');
-    return boats.rows;
+const getCities = async () => {
+    const cities = await City.findAll({
+        include: [
+            {
+                model: Country,
+                required: true
+            }
+        ]
+    });
+    //const cities = await client.query('SELECT * from cities ORDER BY id ASC');
+    return cities;
 };
 
 
@@ -17,9 +27,9 @@ const getBoats = async () => {
 //                                API Get ONE                                //
 ///////////////////////////////////////////////////////////////////////////////
 
-const getBoat = async id => {
-    const boat =  await client.query('SELECT * FROM boats WHERE id = $1', [id]);
-    return boat.rows;
+const getCity = async id => {
+    const city =  await client.query('SELECT * FROM cities WHERE id = $1', [id]);
+    return city.rows;
 };
 
 
@@ -27,10 +37,10 @@ const getBoat = async id => {
 //                                API Create                                 //
 ///////////////////////////////////////////////////////////////////////////////
 
-const createBoat = async boat => {
-    console.log(boat.name)
-    const createdBoat =  await client.query('INSERT INTO boats (name, location) VALUES ($1, $2)', [boat.name, boat.location]);
-    return createdBoat;
+const createCity = async city => {
+    console.log(city.name)
+    const createdCity =  await client.query('INSERT INTO cities (name, location) VALUES ($1, $2)', [city.name, city.location]);
+    return createdCity;
 };
 
 
@@ -38,14 +48,14 @@ const createBoat = async boat => {
 //                                API Update                                 //
 ///////////////////////////////////////////////////////////////////////////////
 
-const updateBoat = async (id, boat) => {
-        const updatedBoat = await client.query('UPDATE boats SET name = $1, location = $2 WHERE id = $3', [
-            boat.name,
-            boat.location,
+const updateCity = async (id, city) => {
+        const updatedCity = await client.query('UPDATE cities SET name = $1, location = $2 WHERE id = $3', [
+            city.name,
+            city.location,
             id
         ]);
 
-        return updatedBoat;
+        return updatedCity;
 };
 
 
@@ -53,19 +63,19 @@ const updateBoat = async (id, boat) => {
 //                                API Delete                                 //
 ///////////////////////////////////////////////////////////////////////////////
 
-const deleteBoat = async id => {
-    const removedBoat = client.query('DELETE FROM boats where id = $1', [
+const deleteCity = async id => {
+    const removedCity = client.query('DELETE FROM cities where id = $1', [
         id
     ]);
 
-    return removedBoat;
+    return removedCity;
 };
 
 
 export default {
-    getBoats,
-    getBoat,
-    createBoat,
-    updateBoat,
-    deleteBoat
+    getCities,
+    getCity,
+    createCity,
+    updateCity,
+    deleteCity
 };
