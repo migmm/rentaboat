@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-import { Boat } from "./Boat.js";
+import { City } from "./city.js";
 
 export const Harbour = sequelize.define(
     "harbour",
@@ -10,7 +10,13 @@ export const Harbour = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        harbour_name: {
+        harbourName: {
+            type: DataTypes.STRING,
+        },
+        statusStatus: {
+            type: DataTypes.BOOLEAN,
+        },
+        statusReason: {
             type: DataTypes.STRING,
         },
     },
@@ -19,4 +25,5 @@ export const Harbour = sequelize.define(
     },
 );
 
-Harbour.hasMany(Boat);
+City.hasMany(Harbour);
+

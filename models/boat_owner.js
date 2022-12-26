@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-
+import { Cart } from "./cart.js"; 
+import { Rental } from "./rental.js";
 
 export const Boat_owner = sequelize.define(
     "boat_owner",
@@ -10,13 +11,19 @@ export const Boat_owner = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        owner_name: {
+        ownerName: {
             type: DataTypes.STRING,
         },
-        owner_mail: {
+        ownerMail: {
             type: DataTypes.STRING,
         },
-        owner_phone: {
+        ownerPhone: {
+            type: DataTypes.STRING,
+        },
+        ownerStatus: {
+            type: DataTypes.BOOLEAN,
+        },
+        statusReason: {
             type: DataTypes.STRING,
         },
     },
@@ -25,3 +32,7 @@ export const Boat_owner = sequelize.define(
     },
 );
 
+/* Cart.hasMany(Boat_owner)
+Boat_owner.belongsTo(Cart) */
+
+/* Boat_owner.belongsTo(Rental) */

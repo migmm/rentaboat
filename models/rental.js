@@ -1,9 +1,5 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-import { Customer } from "./customer.js";
-import { Boat_owner } from "./boat_owner.js"; 
-
-
 
 export const Rental = sequelize.define(
     "rental",
@@ -13,17 +9,23 @@ export const Rental = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        available_date_from: {
+        availableDate_from: {
             type: DataTypes.DATE,
         },
-        available_date_to: {
+        availableDate_to: {
             type: DataTypes.DATE,
         },
-        available_captain: {
+        availableCaptain: {
             type: DataTypes.BOOLEAN,
         },
-        total_price: {
+        totalPrice: {
             type: DataTypes.FLOAT,
+        },
+        rentalStatus: {
+            type: DataTypes.BOOLEAN,
+        },
+        statusReason: {
+            type: DataTypes.STRING,
         },
     },
     {
@@ -31,8 +33,5 @@ export const Rental = sequelize.define(
     },
 );
 
-Boat_owner.belongsTo(Rental)
-Rental.hasMany(Customer)
-Customer.belongsTo(Rental)
 
 

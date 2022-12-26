@@ -3,6 +3,8 @@ import { sequelize } from "../model/sequelize.js";
 import { Boat_owner } from "./Boat_owner.js";
 import { Cart } from "./cart.js";
 import { Rental } from "./rental.js";
+import { City } from "./city.js";
+import { Harbour} from "./harbour.js";
 
 export const Boat = sequelize.define(
     "boat",
@@ -12,7 +14,7 @@ export const Boat = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        boat_type: {
+        boatType: {
             type: DataTypes.STRING,
         },
         brand: {
@@ -36,6 +38,12 @@ export const Boat = sequelize.define(
         price: {
             type: DataTypes.FLOAT,
         },
+        boatStatus: {
+            type: DataTypes.BOOLEAN,
+        },
+        statusReason: {
+            type: DataTypes.STRING,
+        },
     },
     {
         freezeTableName: true,	
@@ -45,8 +53,12 @@ export const Boat = sequelize.define(
 Boat_owner.hasMany(Boat)
 Boat.belongsTo(Boat_owner)
 
-Cart.hasMany(Boat)
-Boat.belongsTo(Cart)
+Boat.hasMany(Cart)
+//Boat.belongsTo(Cart)
 
-Rental.hasMany(Boat)
-Boat.belongsTo(Rental)
+Boat.hasMany(Rental)
+//Boat.belongsTo(Rental)
+
+City.hasMany(Boat);
+
+Harbour.hasMany(Boat);

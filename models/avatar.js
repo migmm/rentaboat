@@ -11,7 +11,7 @@ export const Avatar = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        avatar_url: {
+        avatarUrl: {
             type: DataTypes.STRING,
         },
     },
@@ -22,5 +22,6 @@ export const Avatar = sequelize.define(
 
 Boat_owner.hasMany(Avatar)
 Avatar.belongsTo(Boat_owner)
+
 Customer.hasMany(Avatar)
 Avatar.belongsTo(Customer)

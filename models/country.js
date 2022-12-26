@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-import { City } from "./city.js";
 
 export const Country = sequelize.define(
     "country",
@@ -10,7 +9,7 @@ export const Country = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        country_name: {
+        countryName: {
             type: DataTypes.STRING,
         },
     },
@@ -18,7 +17,5 @@ export const Country = sequelize.define(
         freezeTableName: true,	
     },
 );
-
-Country.hasMany(City); 
 
 

@@ -10,7 +10,7 @@ export const Image = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        image_url: {
+        imageUrl: {
             type: DataTypes.STRING,
         },
     },
@@ -21,4 +21,3 @@ export const Image = sequelize.define(
 
 Boat.hasMany(Image);
 Image.belongsTo(Boat);
-

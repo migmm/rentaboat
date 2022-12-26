@@ -1,7 +1,5 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-import { Customer } from "./customer.js";
-import { Boat_owner } from "./boat_owner.js"; 
 
 export const Cart = sequelize.define(
     "cart",
@@ -11,23 +9,25 @@ export const Cart = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        date_from: {
+        dateFrom: {
             type: DataTypes.DATE,
         },
-        date_to: {
+        dateTo: {
             type: DataTypes.DATE,
         },
-        total_price: {
+        totalPrice: {
             type: DataTypes.FLOAT,
+        },
+        cartStatus: {
+            type: DataTypes.BOOLEAN,
+        },
+        statusReason: {
+            type: DataTypes.STRING,
         },
     },
     {
-        reezeTableName: true,	
+        freezeTableName: true,	
     },
 );
 
-Cart.hasMany(Boat_owner)
-Boat_owner.belongsTo(Cart)
-Cart.hasMany(Customer)
-Customer.belongsTo(Cart)
 

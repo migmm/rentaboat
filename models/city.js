@@ -1,9 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-import { Harbour } from "./harbour.js";
-import { Boat } from "./Boat.js";
-import { Cart } from "./cart.js";
 import { Rental } from "./rental.js";
+import { Country } from "./country.js";
 
 export const City = sequelize.define(
     "city",
@@ -13,7 +11,7 @@ export const City = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        city_name: {
+        cityName: {
             type: DataTypes.STRING,
         },
     },
@@ -22,11 +20,9 @@ export const City = sequelize.define(
     },
 );
 
-City.hasMany(Harbour);
-City.hasMany(Boat);
+City.hasMany(Rental)
 
-Cart.hasMany(City)
-City.belongsTo(Cart)
+//City.hasMany(Rental)
+//City.belongsTo(Rental)
 
-Rental.hasMany(City)
-City.belongsTo(Rental)
+Country.hasMany(City); 

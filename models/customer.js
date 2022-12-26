@@ -1,5 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
+import { Cart } from "./cart.js";
+import { Rental } from "./rental.js";
 
 export const Customer = sequelize.define(
     "customer",
@@ -9,13 +11,19 @@ export const Customer = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        customer_name: {
+        customerName: {
             type: DataTypes.STRING,
         },
-        customer_mail: {
+        customerMail: {
             type: DataTypes.STRING,
         },
-        customer_phone: {
+        customerPhone: {
+            type: DataTypes.STRING,
+        },
+        customerStatus: {
+            type: DataTypes.BOOLEAN,
+        },
+        statusReason: {
             type: DataTypes.STRING,
         },
     },
@@ -23,3 +31,9 @@ export const Customer = sequelize.define(
         freezeTableName: true,	
     },
 );
+
+Customer.hasMany(Cart)
+/* Customer.belongsTo(Cart) */
+
+Customer.hasMany(Rental)
+/* Customer.belongsTo(Rental) */
