@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-import { City } from "./city.js";
+
 
 export const Harbour = sequelize.define(
     "harbour",
@@ -25,5 +25,5 @@ export const Harbour = sequelize.define(
     },
 );
 
-City.hasMany(Harbour);
+
 

@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-import { Cart } from "./cart.js";
-import { Rental } from "./rental.js";
+/* import { Cart } from "./cart.js";
+import { Rental } from "./rental.js"; */
 
 export const Customer = sequelize.define(
     "customer",
@@ -32,8 +32,8 @@ export const Customer = sequelize.define(
     },
 );
 
-Customer.hasMany(Cart)
+/* Customer.hasMany(Cart)
 /* Customer.belongsTo(Cart) */
-
-Customer.hasMany(Rental)
-/* Customer.belongsTo(Rental) */
+/* 
+Customer.hasMany(Rental) */
+/* Customer.belongsTo(Rental) */ 

@@ -1,7 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
-import { Rental } from "./rental.js";
-import { Country } from "./country.js";
+import { Harbour } from "./harbour.js"; 
 
 export const City = sequelize.define(
     "city",
@@ -19,10 +18,16 @@ export const City = sequelize.define(
         freezeTableName: true,	
     },
 );
-
+/* 
 City.hasMany(Rental)
+
+City.hasMany(Harbour);
+Harbour.belongsTo(City)
 
 //City.hasMany(Rental)
 //City.belongsTo(Rental)
 
-Country.hasMany(City); 
+ */
+
+City.hasMany(Harbour);
+Harbour.belongsTo(City)

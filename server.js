@@ -1,5 +1,9 @@
 import express from 'express';
 import config from './config.js';
+import { sequelize } from './model/sequelize.js';
+import { Country } from "./models/country.js"; 
+import { City } from "./models/city.js"; 
+import { Harbour } from "./models/harbour.js"; 
 
 // Import Routes
 import routerAvatar from './router/avatar.js';
@@ -33,18 +37,17 @@ app.use('/api/rental', routerRental);
 
 import client from './model/postgresql.js'
 client.connect();
-/* // DB models imports to create Database
+// DB models imports to create Database
 import './models/country.js';
 import './models/city.js';
 import './models/harbour.js';
 import './models/image.js';
 import './models/avatar.js';
+import './models/cart.js';
+import './models/rental.js';
 import './models/boat_owner.js';
 import './models/boat.js';
 import './models/customer.js';
-import './models/rental.js';
-import './models/cart.js';
-import { Harbour } from './models/harbour.js';
 
 async function main() {
     try {
@@ -58,11 +61,11 @@ async function main() {
 
 async function fillTables() {
 
-    sequelize.sync().then(() => {
+    sequelize.sync({ force: true }).then(() => {
         console.log('Book table created successfully!');
 
         Country.bulkCreate([
-            
+
             { countryName: "España" },
             { countryName: "Francia" },
             { countryName: "Croacia" },
@@ -75,27 +78,27 @@ async function fillTables() {
         });
 
         City.bulkCreate([
-            
-            { cityName: "Barcelona", countryId : "1"},
-            { cityName: "Girona", countryId : "1"},
-            { cityName: "Alicante", countryId : "1"},
-            { cityName: "Granada", countryId : "1"},
-            { cityName: "Málaga", countryId : "1"},
 
-            { cityName: "Niza", countryId : "2" },
-            { cityName: "Cannes", countryId : "2"  },
-            { cityName: "Mónaco", countryId : "2"  },
-            { cityName: "Saint-Tropez", countryId : "2"  },
-            { cityName: "Marsella", countryId : "2"  },
+            { cityName: "Barcelona", countryId: "1" },
+            { cityName: "Girona", countryId: "1" },
+            { cityName: "Alicante", countryId: "1" },
+            { cityName: "Granada", countryId: "1" },
+            { cityName: "Málaga", countryId: "1" },
 
-            { cityName: "NDubrovnik", countryId : "3"  },
-            { cityName: "Split", countryId : "3"  },
-            { cityName: "Islas dálmatas", countryId : "3"  },
+            { cityName: "Niza", countryId: "2" },
+            { cityName: "Cannes", countryId: "2" },
+            { cityName: "Mónaco", countryId: "2" },
+            { cityName: "Saint-Tropez", countryId: "2" },
+            { cityName: "Marsella", countryId: "2" },
 
-            { cityName: "Amalfi", countryId : "4" },
-            { cityName: "Capri", countryId : "4" },
-            { cityName: "Sorrento", countryId : "4" },
-            { cityName: "Positano", countryId : "4" },
+            { cityName: "NDubrovnik", countryId: "3" },
+            { cityName: "Split", countryId: "3" },
+            { cityName: "Islas dálmatas", countryId: "3" },
+
+            { cityName: "Amalfi", countryId: "4" },
+            { cityName: "Capri", countryId: "4" },
+            { cityName: "Sorrento", countryId: "4" },
+            { cityName: "Positano", countryId: "4" },
 
         ]).then(res => {
             console.log(res)
@@ -104,27 +107,27 @@ async function fillTables() {
         });
 
         Harbour.bulkCreate([
-            
-            { harbourName: "Harbour Coast", cityId : "1"},
-            { harbourName: "Harbour Coast", cityId : "2"},
-            { harbourName: "Harbour Coast", cityId : "3"},
-            { harbourName: "Harbour Coast", cityId : "4"},
-            { harbourName: "Harbour Coast", cityId : "5"},
 
-            { harbourName: "Harbour Coast", cityId : "6" },
-            { harbourName: "Harbour Coast", cityId : "7"  },
-            { harbourName: "Harbour Coast", cityId : "8"  },
-            { harbourName: "Harbour Coast", cityId : "9"  },
-            { harbourName: "Harbour Coast", cityId : "10"  },
+            { harbourName: "Harbour Coast", cityId: "1" },
+            { harbourName: "Harbour Coast", cityId: "2" },
+            { harbourName: "Harbour Coast", cityId: "3" },
+            { harbourName: "Harbour Coast", cityId: "4" },
+            { harbourName: "Harbour Coast", cityId: "5" },
 
-            { harbourName: "Harbour Coast", cityId : "1"  },
-            { harbourName: "Harbour Coast", cityId : "2"  },
-            { harbourName: "Harbour Coast", cityId : "3"  },
+            { harbourName: "Harbour Coast", cityId: "6" },
+            { harbourName: "Harbour Coast", cityId: "7" },
+            { harbourName: "Harbour Coast", cityId: "8" },
+            { harbourName: "Harbour Coast", cityId: "9" },
+            { harbourName: "Harbour Coast", cityId: "10" },
 
-            { harbourName: "Harbour Coast", cityId : "4" },
-            { harbourName: "Harbour Coast", cityId : "5" },
-            { harbourName: "Harbour Coast", cityId : "6" },
-            { harbourName: "Harbour Coast", cityId : "6" },
+            { harbourName: "Harbour Coast", cityId: "1" },
+            { harbourName: "Harbour Coast", cityId: "2" },
+            { harbourName: "Harbour Coast", cityId: "3" },
+
+            { harbourName: "Harbour Coast", cityId: "4" },
+            { harbourName: "Harbour Coast", cityId: "5" },
+            { harbourName: "Harbour Coast", cityId: "6" },
+            { harbourName: "Harbour Coast", cityId: "6" },
 
         ]).then(res => {
             console.log(res)
@@ -147,7 +150,7 @@ async function fillTables() {
 
 //main()
 
-fillTables() */
+fillTables()
 
 const PORT = config.PORT;
 const server = app.listen(PORT, () => console.log(`Servidor Express escuchando en el puerto ${PORT}.`));

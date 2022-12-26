@@ -1,7 +1,9 @@
 
 import { Boat } from '../models/boat.js';
 import { Boat_owner } from '../models/boat_owner.js';
-import { Avatar } from '../models/avatar.js';
+import { Image } from '../models/image.js';
+import { Cart } from '../models/cart.js';
+import { Rental } from '../models/rental.js';
 //const modelBoats = BoatModel.get(config.PERSISTENCE_TYPE);
 
 
@@ -17,7 +19,15 @@ const getBoats = async () => {
                 required: true
             },
             {
-                model: Avatar,
+                model: Image,
+                required: true
+            },
+            {
+                model: Cart,
+                required: true
+            },
+            {
+                model: Rental,
                 required: true
             }
         ]

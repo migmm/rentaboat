@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
+import { City } from "./city.js";
 
 export const Country = sequelize.define(
     "country",
@@ -18,4 +19,5 @@ export const Country = sequelize.define(
     },
 );
 
-
+Country.hasMany(City); 
+City.belongsTo(Country)

@@ -10,16 +10,16 @@ import { Boat } from '../models/Boat.js';
 ///////////////////////////////////////////////////////////////////////////////
 
 const getHarbours = async () => {
-    const harbours = await Country.findAll({
+    const harbours = await Harbour.findAll({
         include: [
             {
                 model: City,
                 required: true
             },
-            {
+/*             {
                 model: Boat,
                 required: true
-            }
+            } */
         ]
     });
     //const harbours = await client.query('SELECT * from harbours ORDER BY id ASC');
