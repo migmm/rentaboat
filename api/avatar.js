@@ -1,5 +1,5 @@
 
-import { Avatar } from '../models/avatar.js';
+import { Avatar_boat_owner } from '../models/avatar_boat_owner.js';
 import { Customer } from '../models/customer.js';
 import { Boat_owner } from '../models/boat_owner.js';
 //const modelAvatars = AvatarModel.get(config.PERSISTENCE_TYPE);
@@ -10,7 +10,7 @@ import { Boat_owner } from '../models/boat_owner.js';
 ///////////////////////////////////////////////////////////////////////////////
 
 const getAvatars = async () => {
-    const avatars = await Avatar.findAll({
+    const avatars = await Avatar_boat_owner.findAll({
         include: [
             {
                 model: Customer,

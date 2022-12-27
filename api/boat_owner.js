@@ -1,6 +1,6 @@
 
 import { Boat_owner } from '../models/boat_owner.js';
-import { Avatar } from '../models/avatar.js';
+import { Avatar_boat_owner } from '../models/avatar_boat_owner.js';
 import { Boat } from '../models/boat.js';
 //const modelBoatOwners = BoatOwnerModel.get(config.PERSISTENCE_TYPE);
 
@@ -13,7 +13,7 @@ const getBoatOwners = async () => {
     const boatOwners = await Boat_owner.findAll({
         include: [
             {
-                model: Avatar,
+                model: Avatar_boat_owner,
                 required: true
             },
             {

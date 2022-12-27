@@ -1,10 +1,9 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../model/sequelize.js";
 import { Boat_owner } from "./boat_owner.js";
-import { Customer } from "./customer.js";
 
-export const Avatar = sequelize.define(
-    "avatar",
+export const Avatar_boat_owner = sequelize.define(
+    "avatar_boat_owner",
     {
         id: {
             type: DataTypes.INTEGER,
@@ -20,8 +19,6 @@ export const Avatar = sequelize.define(
     },
 );
 
-Boat_owner.hasMany(Avatar)
-Avatar.belongsTo(Boat_owner)
+Boat_owner.hasMany(Avatar_boat_owner)
+Avatar_boat_owner.belongsTo(Boat_owner)
 
-Customer.hasMany(Avatar)
-Avatar.belongsTo(Customer)

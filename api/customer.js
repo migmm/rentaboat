@@ -2,7 +2,7 @@
 import { Customer } from '../models/customer.js';
 import { Rental } from '../models/Rental.js';
 import { Cart } from '../models/Cart.js';
-import { Avatar } from '../models/Avatar.js';
+import { Avatar_customer } from '../models/avatar_customer.js';
 //const modelCustomers = CustomerModel.get(config.PERSISTENCE_TYPE);
 
 
@@ -22,7 +22,7 @@ const getCustomers = async () => {
                 required: true
             },
             {
-                model: Avatar,
+                model: Avatar_customer,
                 required: true
             }
         ]

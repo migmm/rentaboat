@@ -12,10 +12,10 @@ export const Rental = sequelize.define(
             primaryKey: true,
             autoIncrement: true,
         },
-        availableDate_from: {
+        availableDateFrom: {
             type: DataTypes.DATE,
         },
-        availableDate_to: {
+        availableDateTo: {
             type: DataTypes.DATE,
         },
         availableCaptain: {
