@@ -1,8 +1,6 @@
 # RENT A BOAT
 ### Status: In progress 
 
-First commit 16/10/2022
-
 
 [PARA LEER EN ESPAÑOL](https://github.com/migmm/rentaboat/blob/main/README-ES.md)
 
@@ -10,8 +8,9 @@ First commit 16/10/2022
 ## Portal for boat rental
 
 
-In frontend I used:
+In frontend I will use:
 
+#### TODO
 
 - HTML
 - CSS
@@ -20,17 +19,16 @@ In frontend I used:
 - BEM arquitecture
 
 
-TODO
-
-In Backend I will use:
+In Backend I used:
 
 
 - Node.JS
 - Express
-- PostgreSQL
+- PostgreSQL database hosted in [ElephahtSQL](https://www.elephantsql.com/)
 - Layer design for a better scalability and faster understanding
 
 
-Database schema
+### Database schema
+
 
 [<img src="img/schema.png">](https://dbdiagram.io/d/63ab75c37d39e42284e7cb75)
