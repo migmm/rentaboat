@@ -29,3 +29,8 @@ In Backend I will use:
 - Express
 - PostgreSQL
 - Layer design for a better scalability and faster understanding
+
+
+Database schema
+
+[<img src="img/schema.png">](https://dbdiagram.io/d/63ab75c37d39e42284e7cb75)
