@@ -824,6 +824,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  padding: 1em;
 }
 .main-content__search-results .boat-card {
   max-width: 600px;
